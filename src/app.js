@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const productRouter = require('./controllers/productControllers');
+const productRouter = require('../controllers/productControllers');
 //const router = require('../controllers/productControllers');
 
 //Router Middlewares
