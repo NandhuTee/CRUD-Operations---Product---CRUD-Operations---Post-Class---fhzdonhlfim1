@@ -10,12 +10,13 @@ router.post('/products', async (req, res) => {
       return res.status(400).json({ message: 'Product name and price are required' });
     }
     const newProduct = await Product.create({ productName, price });
-    res.status(400).json({ message: 'Product created', product: newProduct });
+    res.status(201).json({ message: 'Product created', product: newProduct });  // ✅ Fix: Change status from 400 to 201
   } catch (error) {
     console.error('Error creating product:', error);
     res.status(500).json({ message: 'Internal server error', error: error.message });
   }
 });
+
 
 // Retrieve a product by ID
 router.get('/products/:id', async (req, res) => {
