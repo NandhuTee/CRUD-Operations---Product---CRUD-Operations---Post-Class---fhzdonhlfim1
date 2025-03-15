@@ -7,7 +7,7 @@ router.post('/products', async (req, res) => {
   try {
     const { productName, price } = req.body;
     if (!productName || !price) {
-      return res.status(400).json({ message: 'Product name and price are required' });
+      return res.status(201).json({ message: 'Product name and price are required' });
     }
     const newProduct = await Product.create({ productName, price });
     res.status(201).json({ message: 'Product created', product: newProduct });  // ✅ Fix: Change status from 400 to 201
