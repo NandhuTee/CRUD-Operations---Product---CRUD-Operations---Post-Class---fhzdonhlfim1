@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const productRouter = require('../controllers/productControllers');
-//const router = require('../controllers/productControllers');
+const productRouter = require('../controllers/productControllers'); // Ensure this exports `router`
 
-//Router Middlewares
+// Middleware
 app.use(express.json());
 
+// Routes
 app.use('/api', productRouter);
 
 module.exports = app;
